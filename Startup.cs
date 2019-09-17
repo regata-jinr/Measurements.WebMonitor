@@ -19,7 +19,7 @@ namespace WebMonitorBlazor
     {
       Configuration = configuration;
     }
-
+    public static string _connectionString = null;
     public IConfiguration Configuration { get; }
 
     // This method gets called by the runtime. Use this method to add services to the container.
@@ -30,6 +30,7 @@ namespace WebMonitorBlazor
       services.AddRazorPages();
       services.AddServerSideBlazor();
       services.AddSingleton<LogService>();
+      _connectionString = Configuration["ConnectionString"];
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,7 +8,7 @@ namespace WebMonitorBlazor.Data
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseNpgsql(@"");
+      optionsBuilder.UseNpgsql(Startup._connectionString);
     }
   }
 }
